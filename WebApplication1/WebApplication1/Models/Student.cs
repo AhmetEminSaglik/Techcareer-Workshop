@@ -21,7 +21,15 @@ namespace WebApplication1.Models
 
         public string Departmant { get; set; }
 
+
         public int RegisteredYear { get; set; }
+
+
+        [Required]
+        [DisplayName("Email")]
+        [EmailAddress]
+        public string email { get; set; }
+
 
     }
 

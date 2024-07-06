@@ -1,12 +1,43 @@
-﻿@model WebApplication1.Models.Book
+﻿@model dynamic
 
 @{
     ViewBag.Title = "Index";
+    var book = Model.Item1;
+    var student = Model.Item2;
 }
 
-<h2>Book View</h2>
+<h1>Book View</h1>
+<br />
+<h2>Book Data </h2>
 
-<p>Id: @Model.Id</p>
-<p>Adı: @Model.Name</p>
-<p>Özet: @Model.Desc</p>
-<p>Sayfa Sayısı: @Model.page</p>
+@*<p>Id: @book.Id</p>*@
+<p>Adı: @book.Name</p>
+<p>Özet: @book.Desc</p>
+<p>Sayfa Sayısı: @book.page</p>
+
+<hr />
+
+<h2>Student Data</h2>
+
+@*<p>Id: @student.Id</p>*@
+<p>Adı: @student.Name</p>
+<p>Soyadı: @student.LastName</p>
+<p>Email: @student.email</p>
+<p>TC Numarası: @student.TcNo</p>
+<p>Bölümü: @student.Departmant</p>
+<p>Kayıt Yılı: @student.RegisteredYear</p>
+
+@*@model WebApplication1.Models.Book
+
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Book View</h2>
+
+    <p>Id: @Model.Id</p>
+    <p>Adı: @Model.Name</p>
+    <p>Özet: @Model.Desc</p>
+    <p>Sayfa Sayısı: @Model.page</p>
+*@

@@ -15,8 +15,26 @@ namespace WebApplication1.Controllers
         public ActionResult Index()
         {
             Book book = createBook();
+            Student student = createStudent();
 
-            return View(book);
+            Console.WriteLine(student);
+            Console.WriteLine(book);
+
+            return View(Tuple.Create<WebApplication1.Models.Book, WebApplication1.Models.Student>(book, student));
+        }
+
+        private Student createStudent()
+        {
+            Student student = new Student();
+
+            student.Name = "Ahmet Emin";
+            student.LastName = "SAĞLIK";
+            student.TcNo = "12312312300";
+            student.Departmant = "Yazılım Müh.";
+            student.RegisteredYear = 2018;
+            student.email = "asbc";
+
+            return student;
         }
 
         private Book createBook()

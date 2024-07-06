@@ -13,7 +13,7 @@ namespace WebApplication1.Models
 
         [Required]
         [DisplayName("Doğum Yılı")]
-        public int BirthYear{ get; set; }
+        public int BirthYear { get; set; }
 
     }
 }

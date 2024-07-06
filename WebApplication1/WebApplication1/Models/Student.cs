@@ -18,12 +18,9 @@ namespace WebApplication1.Models
         [MinLength(11, ErrorMessage = "TC Kimlik Numarası 11 karakter olmalıdır.")]
         [MaxLength(11, ErrorMessage = "TC Kimlik Numarası 11 karakter olmalıdır.")]
         public string TcNo { get; set; }
-
-        public string Departmant { get; set; }
-
-
+        
+        public string Major { get; set; }
         public int RegisteredYear { get; set; }
-
 
         [Required]
         [DisplayName("Email")]

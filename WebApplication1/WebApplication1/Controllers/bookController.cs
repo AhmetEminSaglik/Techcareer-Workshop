@@ -30,9 +30,9 @@ namespace WebApplication1.Controllers
             student.Name = "Ahmet Emin";
             student.LastName = "SAĞLIK";
             student.TcNo = "12312312300";
-            student.Departmant = "Yazılım Müh.";
+            student.Major = "Software Engineer";
             student.RegisteredYear = 2018;
-            student.email = "asbc";
+            student.email = "ahmeteminsaglik@gmail.com";
 
             return student;
         }
@@ -44,7 +44,7 @@ namespace WebApplication1.Controllers
             book.author = author;
             book.Name = "Clean Code";
             book.Desc = "Made read learn how to write clean, effective code.";
-            book.page = 464;
+            book.pageNumber = 464;
 
             return book;
         }

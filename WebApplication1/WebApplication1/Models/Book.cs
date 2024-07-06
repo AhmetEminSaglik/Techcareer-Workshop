@@ -8,24 +8,20 @@ namespace WebApplication1.Models
         public int Id { get; set; }
 
         [Required]
-        [DisplayName("Adı")]
+        [DisplayName("Name")]
         public string Name { get; set; }
 
-        [DisplayName("Özet")]
+        [DisplayName("Description")]
         public string Desc { get; set; }
 
         [Required]
-        [DisplayName("Sayfa sayısı")]
-        [MinLength(50, ErrorMessage = "Eklenecek kitabın sayfa sayısı en az 50 olmalıdır.")]
-        [MaxLength(350, ErrorMessage = "Eklenecek kitabın sayfa sayısı en fazla 350 olmalıdır.")]
-        public int page { get; set; }
+        [DisplayName("Page Number")]
+        [MinLength(50, ErrorMessage = "The number of pages of the book must be at least 50.")]
+        [MaxLength(350, ErrorMessage = "The number of pages of the book must not exceed 350.")]
+        public int pageNumber { get; set; }
 
         [Required]
-        [DisplayName("Yazar")]
+        [DisplayName("Author")]
         public Author author { get; set; }
-
-        /*     [Required]
-             [DisplayName("Yazar Adı")]
-             public string Author { get; set; }*/
     }
 }

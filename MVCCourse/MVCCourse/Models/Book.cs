@@ -11,17 +11,20 @@ namespace MVCCourse.Models
         [DisplayName("Name")]
         public string Name { get; set; }
 
+        [Required]
+        [MinLength(5, ErrorMessage = "Can Be minimum 5 characters.")]
+        [MaxLength(50, ErrorMessage = "Can Be minimum 50 characters.")]
         [DisplayName("Description")]
         public string Desc { get; set; }
 
         [Required]
+        [Range(50, 350, ErrorMessage = "The number of pages of the book must be between 50-350")]
         [DisplayName("Page Number")]
-        [MinLength(50, ErrorMessage = "The number of pages of the book must be at least 50.")]
-        [MaxLength(350, ErrorMessage = "The number of pages of the book must not exceed 350.")]
-        public int pageNumber { get; set; }
+        public int PageNumber { get; set; }
 
         [Required]
-        [DisplayName("Author")]
-        public Author author { get; set; }
+        [DisplayName("Author Name")]
+        public string AuthorName { get; set; }
+
     }
 }

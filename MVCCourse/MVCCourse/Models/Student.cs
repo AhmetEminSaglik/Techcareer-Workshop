@@ -14,7 +14,7 @@ namespace MVCCourse.Models
         public string LastName { get; set; }
 
         [Required]
-        [DisplayName("Türkiye Cumhuriyeti Kimlik Numarası")]
+        [DisplayName("TC No")]
         [MinLength(11, ErrorMessage = "TC Kimlik Numarası 11 karakter olmalıdır.")]
         [MaxLength(11, ErrorMessage = "TC Kimlik Numarası 11 karakter olmalıdır.")]
         public string TcNo { get; set; }
@@ -25,7 +25,7 @@ namespace MVCCourse.Models
         [Required]
         [DisplayName("Email")]
         [EmailAddress]
-        public string email { get; set; }
+        public string Email { get; set; }
 
 
     }

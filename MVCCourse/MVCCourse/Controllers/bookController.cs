@@ -1,62 +1,46 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MVCCourse.Data;
 using MVCCourse.Models;
 
 namespace MVCCourse.Controllers
 {
     public class BookController : Controller
     {
-        public Book book = new Book();
-        // GET: book
         public ActionResult Index()
         {
-            Book book = createBook();
-            Student student = createStudent();
-
-            Console.WriteLine(student);
-            Console.WriteLine(book);
-
-            return View(Tuple.Create<MVCCourse.Models.Book, MVCCourse.Models.Student>(book, student));
+            return View(BookData.Books);
+        }
+        public ActionResult Save()
+        {
+            return View();
         }
 
-        private Student createStudent()
+        [HttpPost]
+        public ActionResult Save(Book NewBook)
         {
-            Student student = new Student();
-
-            student.Name = "Ahmet Emin";
-            student.LastName = "SAĞLIK";
-            student.TcNo = "12312312300";
-            student.Major = "Software Engineer";
-            student.RegisteredYear = 2018;
-            student.email = "ahmeteminsaglik@gmail.com";
-
-            return student;
+            BookData.Books.Add(NewBook);
+            return RedirectToAction("Index");
+        }
+        public ActionResult Update(int id)
+        {
+            var book = BookData.Books.Where(x => x.Id == id).FirstOrDefault();
+            return View(book);
         }
 
-        private Book createBook()
+        [HttpPost]
+        public ActionResult Update(Book updateBook)
         {
-            Author author = createAuthor();
-            Book book = new Book();
-            book.author = author;
-            book.Name = "Clean Code";
-            book.Desc = "Made read learn how to write clean, effective code.";
-            book.pageNumber = 464;
+            var book = BookData.Books.Where(x => x.Id == updateBook.Id).FirstOrDefault();
+            book.Name = updateBook.Name;
+            book.AuthorName = updateBook.AuthorName;
+            book.PageNumber = updateBook.PageNumber;
 
-            return book;
-        }
-        private Author createAuthor()
-        {
+            return RedirectToAction("Index");
 
-            Author author = new Author();
-
-            author.Name = "Robert C. Martin";
-            author.BirthYear = 1952;
-
-            return author;
         }
     }
 }

@@ -1,43 +1,51 @@
-﻿@model dynamic
+﻿@model IEnumerable<MVCCourse.Models.Book>
 
 @{
     ViewBag.Title = "Index";
-    var book = Model.Item1;
-    var student = Model.Item2;
 }
 
-<h1>Book View</h1>
-<br />
-<h2>Book Data </h2>
+<h2>Index</h2>
 
-@*<p>Id: @book.Id</p>*@
-<p>Name: @book.Name</p>
-<p>Description: @book.Desc</p>
-<p>Number Of Page: @book.pageNumber</p>
+<p>
+    @Html.ActionLink("Create New", "/save")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PageNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AuthorName)
+        </th>
+        <th></th>
+    </tr>
 
-<hr />
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PageNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AuthorName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Update", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
 
-<h2>Student Data</h2>
-
-@*<p>Id: @student.Id</p>*@
-<p>Name: @student.Name</p>
-<p>Lastname: @student.LastName</p>
-<p>Email: @student.email</p>
-<p>TC No: @student.TcNo</p>
-<p>Major: @student.Major</p>
-<p>Registered Year: @student.RegisteredYear</p>
-
-@*@model MVCCourse.Models.Book
-
-
-    @{
-        ViewBag.Title = "Index";
-    }
-
-    <h2>Book View</h2>
-
-    <p>Id: @Model.Id</p>
-    <p>Adı: @Model.Name</p>
-    <p>Özet: @Model.Desc</p>
-    <p>Sayfa Sayısı: @Model.page</p>
-*@
+</table>

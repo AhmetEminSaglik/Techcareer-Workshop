@@ -1,0 +1,9 @@
+Have been learned today : 
+- Started working on ASP .Net Framework
+- How to use attributes in Class.
+	Required
+	DisplayName
+	MinLength
+	MaxLength
+	EmailAddress
+

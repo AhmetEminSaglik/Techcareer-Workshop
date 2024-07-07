@@ -9,7 +9,9 @@
 
 
 # Day 1 <a id="day-1"> </a>
+
 <a id="#day-1"> </a><details>
+
 <summary>  Click to see Detail </summary>
 
 
@@ -44,9 +46,10 @@
 
 # Day 2 <a id="day-2"> </a>
 
-<summary>  Click to see Detail </summary>
 
 <details>
+
+<summary>  Click to see Detail </summary>
 
 ### Content :
 

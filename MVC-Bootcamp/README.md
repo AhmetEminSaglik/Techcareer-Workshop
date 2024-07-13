@@ -4,7 +4,7 @@
 
 ###  [Day 1:](#day-1) Laying the Foundation with MVC, Razor, and Data Annotations
 ###  [Day 2:](#day-2) HTTP Request Read-Created-Update
-
+### [Day 3:](#day-3) HTTP Request Delete, Entity Framework
 <br>
 
 
@@ -72,5 +72,45 @@
 !["images/23"](images/23.png) <br> <br>
 !["images/24"](images/24.png) <br> <br>
 !["images/25"](images/25.png) <br> <br>
+
+</details>
+
+<br><br>
+
+
+# Day 3 <a id="day-3"> </a>
+
+<a id="#day-3"> </a><details>
+
+<summary>  Click to see Detail </summary>
+
+### Content :
+1. [Key Learnings](#day-3-key-learnings)
+2. [Images](#day-3-images)
+
+## Key Learnings (Day-3)  <a id="day-3-key-learnings"></a>
+
+
+* Worked on Delete process on objects.
+* What is Entity Framework? 
+* How to use Entity Framework to realize CRUD process.
+* DbContext
+* Connection String
+* How to configure Web.config to connect MsSql Server
+
+
+ Following configuration is added to **_Web.config_** file in project to connect MSSQL localhost server.
+
+```
+<add name="BookDatabase" 
+    connectionString="Data Source=.\SQLEXPRESS; Initial Catalog=Books; Integrated Security=true;" 
+    providerName="System.Data.SqlClient" />
+```
+
+## Images (Day-3) <a id="day-3-images"></a>
+
+!["images/31"](images/31.png) <br> <br>
+!["images/32"](images/32.png) <br> <br>
+!["images/33"](images/33.png) <br> <br>
 
 </details>

@@ -35,14 +35,28 @@ namespace MVCCourse.Controllers
         [HttpPost]
         public ActionResult Update(Student updateStudent)
         {
-            var student= StudentData.Students.Where(x => x.Id == updateStudent.Id).FirstOrDefault();
+            var student = StudentData.Students.Where(x => x.Id == updateStudent.Id).FirstOrDefault();
             student.Name = updateStudent.Name;
             student.LastName = updateStudent.LastName;
-            student.Major= updateStudent.Major;
+            student.Major = updateStudent.Major;
             student.Email = updateStudent.Email;
-            student.TcNo= updateStudent.TcNo;
+            student.TcNo = updateStudent.TcNo;
 
             return RedirectToAction("ListData");
+        }
+
+        public ActionResult delete(int id)
+        {
+            var student = StudentData.Students.Where(x => x.Id == id).FirstOrDefault();
+            return View(student);
+        }
+        [HttpPost]
+        public ActionResult delete(Student student)
+        {
+            Student studentToDelete = StudentData.Students.Where(x => x.Id == student.Id).FirstOrDefault();
+            StudentData.Students.Remove(studentToDelete);
+            return RedirectToAction("ListData");
+
         }
     }
 }

@@ -42,5 +42,19 @@ namespace MVCCourse.Controllers
             return RedirectToAction("Index");
 
         }
+
+        public ActionResult delete(int id)
+        {
+            var book = BookData.Books.Where(x => x.Id == id).FirstOrDefault();
+            return View(book);
+        }
+        [HttpPost]
+        public ActionResult delete(Book book)
+        {
+            Book bookToDelete = BookData.Books.Where(x => x.Id == book.Id).FirstOrDefault();
+            BookData.Books.Remove(bookToDelete);
+            return RedirectToAction("Index");
+
+        }
     }
 }

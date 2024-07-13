@@ -41,8 +41,9 @@
 !["images/3"](images/3.png) <br> <br>
 
 </details>
+<br>
 
-<br><br>
+
 
 # Day 2 <a id="day-2"> </a>
 
@@ -75,7 +76,7 @@
 
 </details>
 
-<br><br>
+<br>
 
 
 # Day 3 <a id="day-3"> </a>
@@ -86,7 +87,9 @@
 
 ### Content :
 1. [Key Learnings](#day-3-key-learnings)
-2. [Images](#day-3-images)
+2. [Configure Web.config](#day-3-configure-web-config)
+3. [Images](#day-3-images)
+
 
 ## Key Learnings (Day-3)  <a id="day-3-key-learnings"></a>
 
@@ -99,12 +102,15 @@
 * How to configure Web.config to connect MsSql Server
 
 
- Following configuration is added to **_Web.config_** file in project to connect MSSQL localhost server.
+## Configure Web.config   <a id="day-3-configure-web-config"> </a>
+ Following xml data is added to **_Web.config_** file in project to connect MSSQL localhost server.
 
-```
-<add name="BookDatabase" 
-    connectionString="Data Source=.\SQLEXPRESS; Initial Catalog=Books; Integrated Security=true;" 
-    providerName="System.Data.SqlClient" />
+```xml
+  <connectionStrings>
+    <add name="RestaurantDatabase" 
+		 connectionString="Data Source=.\SQLEXPRESS; Initial Catalog=Restaurant; Integrated Security=true;" 
+		 providerName="System.Data.SqlClient"/>
+  </connectionStrings>
 ```
 
 ## Images (Day-3) <a id="day-3-images"></a>

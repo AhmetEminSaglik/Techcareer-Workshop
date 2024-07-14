@@ -103,14 +103,16 @@
 
 
 ## Configure Web.config   <a id="day-3-configure-web-config"> </a>
- Following xml data is added to **_Web.config_** file in project to connect MSSQL localhost server.
+ Following xml data was added to **_Web.config_** file. Look for the ***\</entityFramework>*** and ***\</configuration>*** tags that usually are located to bottom of the file and positioned one after the other. Following data must be added between them. This configuration makes the project connecting MSSQL localhost server.
 
 ```xml
+  <!--</entityFramework>-->
   <connectionStrings>
     <add name="RestaurantDatabase" 
 		 connectionString="Data Source=.\SQLEXPRESS; Initial Catalog=Restaurant; Integrated Security=true;" 
 		 providerName="System.Data.SqlClient"/>
   </connectionStrings>
+  <!--</configuration> -->
 ```
 
 ## Images (Day-3) <a id="day-3-images"></a>

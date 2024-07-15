@@ -1,4 +1,8 @@
-# *ASP.NET MVC Bootcamp*
+# *ASP.NET MVC Workshop*
+
+## Preface
+
+ &emsp; I would like to thank [Reha Çaputcu](https://www.linkedin.com/in/reha-caputcu-774b394) who was the mentor of the MVC workshop.  I gained an understanding of MVC architecture and applications thanks to the course content and your presentation. Also, I would like to thank the [Techcareer](https://www.techcareer.net) team for providing me with the opportunity to attend the [MVC Masterclass Workshop](https://www.techcareer.net/en/bootcamp/mvc-masterclass-workshop).
 
 ## Global Content
 
